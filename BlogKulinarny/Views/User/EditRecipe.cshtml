@@ -73,27 +73,44 @@
                             if (step.imageURL != "brak")
                             {
                                 <div id="step-@i">
-                                    <div class="border border-2 border-warning rounded-3 p-3 shadow bg-light bg-opacity-25 mt-3">
-                                        <div class="row p-2">
-                                            <div class="col-12">
-                                                <div class="row gx-0">
-                                                    <div class="col-10">
-                                                        <label class="form-label text-nowrap">Krok nr. @(i)</label>
-                                                        <label class="form-label text-nowrap">Link do zdjęcia:</label>
-                                                        <input type="text" class="form-control" value="@step.imageURL" id="eleImage" >
-                                                        <img src="@step.imageURL" class="img-fluid rounded-start" style="width: 250px; height: 200px;" alt="...">
+                                        <div class="border border-2 border-warning rounded-3 p-3 shadow bg-light bg-opacity-25 mt-3">
+                                            <div class="row p-2 g-3">
+                                                <div class="col">
+                                                    <div class="row gx-3">
+                                                        <div class=col-12>
+                                                            <label class="form-label text-nowrap">Krok nr. @(i)</label>
+                                                        </div>
+                                                        <div class="col-auto pt-2">
+                                                            <label class="form-label text-nowrap">Link do zdjęcia:</label>
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" class="form-control" value="@step.imageURL" id="eleImage">
+                                                        </div>
                                                     </div>
-                                                    <div class="col-2">
-                                                        <button class="btn btn-danger btn-sm float-end" onclick="removeStepEdit(@i)">Usuń krok</button>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="row g-2">
+                                                        <div class="col-12">
+                                                            <br/>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <button class="btn btn-danger btn-sm float-end" onclick="removeStepEdit(@i)">Usuń krok</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="row g-3 d-flex justify-content-center">
+                                                        <div class="col-auto">
+                                                            <img src="@step.imageURL" class="img-fluid rounded" style="width: 250px; height: 200px;" alt="...">
+                                                        </div>
+                                                        <div class="col-12 col-md-12 col-lg overflow-hidden">
+                                                            <textarea class="form-control" rows="3" id="eleDetails" name="stepDescriptions[@i]">@step.description</textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12 mb-2">
-                                                <textarea class="form-control" rows="2" id="eleDetails" name="stepDescriptions[@i]">@step.description</textarea>
-                                            </div>
                                         </div>
                                     </div>
-                                </div>
                             }
                         }
                     </div>
